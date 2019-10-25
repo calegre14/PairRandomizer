@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4YV-5D-j9I">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Pair Randomizer-->
+        <scene sceneID="EFi-2v-yCw">
+            <objects>
+                <viewController id="Kcp-33-TuW" customClass="PersonListViewController" customModule="PairRandomizer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BMH-ZR-Kxs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yNW-wS-iGu">
+                                <rect key="frame" x="0.0" y="88" width="414" height="619"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="personCell" textLabel="i79-3x-ubI" style="IBUITableViewCellStyleDefault" id="rG0-Hn-ze4">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rG0-Hn-ze4" id="J4W-6Y-q0l">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="i79-3x-ubI">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbC-i9-VU4">
+                                <rect key="frame" x="0.0" y="729" width="414" height="30"/>
+                                <state key="normal" title="Randomize"/>
+                                <connections>
+                                    <action selector="randomizeGroupsButtonTapped:" destination="Kcp-33-TuW" eventType="touchUpInside" id="Fk6-UJ-8FC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="yNW-wS-iGu" firstAttribute="centerX" secondItem="bhg-4D-aZ8" secondAttribute="centerX" id="3SZ-eG-Si9"/>
+                            <constraint firstItem="yNW-wS-iGu" firstAttribute="top" secondItem="bhg-4D-aZ8" secondAttribute="top" id="8dP-55-uzv"/>
+                            <constraint firstItem="yNW-wS-iGu" firstAttribute="width" secondItem="bhg-4D-aZ8" secondAttribute="width" id="HTz-he-b1K"/>
+                            <constraint firstItem="yNW-wS-iGu" firstAttribute="height" secondItem="bhg-4D-aZ8" secondAttribute="height" multiplier="0.8" id="kvU-t0-fPk"/>
+                            <constraint firstItem="zbC-i9-VU4" firstAttribute="top" secondItem="yNW-wS-iGu" secondAttribute="bottom" constant="22" id="qEu-t0-YGD"/>
+                            <constraint firstItem="zbC-i9-VU4" firstAttribute="width" secondItem="bhg-4D-aZ8" secondAttribute="width" id="vXi-O1-wbe"/>
+                            <constraint firstItem="zbC-i9-VU4" firstAttribute="centerX" secondItem="bhg-4D-aZ8" secondAttribute="centerX" id="y74-ml-Eo4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bhg-4D-aZ8"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Pair Randomizer" id="cIP-PL-SQ8">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="qU8-Uc-jqs">
+                            <connections>
+                                <action selector="addPersonButtonTapped:" destination="Kcp-33-TuW" id="4Up-m2-bjL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="yNW-wS-iGu" id="blC-xm-xwu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LAn-g7-6lQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1597.1014492753625" y="71.651785714285708"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="1iD-iQ-SGw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4YV-5D-j9I" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UJu-lm-qSs">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Kcp-33-TuW" kind="relationship" relationship="rootViewController" id="VP3-TB-vVK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zgn-2r-5g3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="913" y="72"/>
+        </scene>
+    </scenes>
+</document>
